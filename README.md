@@ -39,6 +39,14 @@ Once running visit the browser extension's options page and configure the host a
 
 Cookies are set with wildcarded tld and are by default set as session cookies so closing the browser will allow you to remove the cookies.
 
+## Exit
+
+Due to the nature of the processes running, to kill the process as root you must run the following:
+
+```
+cookiejack -k
+```
+
 TODO: 
 Logging to file / db
 Find a cleaner way to kill the service
