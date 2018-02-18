@@ -18,8 +18,8 @@ python setup.py install
 
 First install one of the two browser extensions:
 
-https://github.com/ecradock/chrome-extension-cookie-injector
-https://github.com/ecradock/firefox-extension-cookie-injector
+ * https://github.com/ecradock/chrome-extension-cookie-injector
+ * https://github.com/ecradock/firefox-extension-cookie-injector
 
 General usage:
 
@@ -40,5 +40,5 @@ Once running visit the browser extension's options page and configure the host a
 Cookies are set with wildcarded tld and are by default set as session cookies so closing the browser will allow you to remove the cookies.
 
 TODO: 
-Logging to file / db
-Find a cleaner way to kill the service
+* Logging to file / db
+* Find a cleaner way to kill the service
