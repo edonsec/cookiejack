@@ -1,0 +1,37 @@
+html, body
+{
+    font-family: sans-serif;
+}
+
+h3#saved-dialog {
+    color: green;
+    display: none;
+}
+
+table#cookie-log {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    margin-top: 20px;
+}
+
+table#cookie-log thead {
+    background: #eee;
+    font-weight: bold;
+}
+
+tbody#cookie-log-body tr td {
+    border-bottom: 1px solid #ccc;
+    padding: 3px;
+}
+
+h1#header {
+    background-image: url("/src/img/icons/icon-normal.png");
+    background-repeat: no-repeat;
+    height: 125px;
+    padding-left: 130px;
+    vertical-align: middle;
+    display: table-cell;
+    width: 100%;
+    padding-bottom: 20px;
+}

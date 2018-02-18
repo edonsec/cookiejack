@@ -1,0 +1,6 @@
+[submodule "browser-extensions/firefox"]
+	path = browser-extensions/firefox
+	url = https://github.com/ecradock/firefox-extension-cookie-injector.git
+[submodule "browser-extensions/chrome"]
+	path = browser-extensions/chrome
+	url = https://github.com/ecradock/chrome-extension-cookie-injector.git
