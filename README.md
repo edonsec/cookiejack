@@ -18,8 +18,8 @@ python setup.py install
 
 First install one of the two browser extensions:
 
-https://github.com/ecradock/chrome-extension-cookie-injector
-https://github.com/ecradock/firefox-extension-cookie-injector
+ * https://github.com/ecradock/chrome-extension-cookie-injector
+ * https://github.com/ecradock/firefox-extension-cookie-injector
 
 General usage:
 
@@ -48,5 +48,5 @@ cookiejack -k
 ```
 
 TODO: 
-Logging to file / db
-Find a cleaner way to kill the service
+* Logging to file / db
+* Find a cleaner way to kill the service
