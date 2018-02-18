@@ -1,5 +1,7 @@
 # CookieJack
 
+I wrote this as a proof of concept and it is not to be used for for any illegitimate purposes.
+
 CookieJack sniffs plaintext HTTP traffic for cookie related headers, it then injects them to awaiting listeners. 
 
 The primary listener sends these to a WebSocket server, using the accompanying Chrome / Firefox extensions by connecting to the available WebSocket server it injects the cookies into the browser in real time.
