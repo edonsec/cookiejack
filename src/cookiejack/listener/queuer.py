@@ -1,13 +1,14 @@
 import zope as zope
 
-from listener.ilistener import IListener
+from zope.interface import implementer
+from cookiejack.listener.ilistener import IListener
 
 
+@implementer(IListener)
 class Queuer(object):
-    zope.interface.implements(IListener)
-
     def __init__(self, queue):
         self.queue = queue
 
     def notify(self, cookie):
+        print("Socket notified")
         self.queue.put(cookie.to_json())

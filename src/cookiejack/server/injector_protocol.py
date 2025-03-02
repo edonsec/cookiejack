@@ -1,4 +1,5 @@
 from autobahn.twisted import WebSocketServerProtocol
+import queue
 
 
 class InjectorProtocol(WebSocketServerProtocol):
@@ -12,7 +13,7 @@ class InjectorProtocol(WebSocketServerProtocol):
         print("Client connecting: {}".format(request.peer))
 
     def onOpen(self):
-        print "WebSocket connection open."
+        print("WebSocket connection open.")
 
         self.send_queued_items()
 
@@ -23,10 +24,16 @@ class InjectorProtocol(WebSocketServerProtocol):
         print("WebSocket connection closed: {}".format(reason))
 
     def send_queued_items(self):
-        for i in range(0, self.queue.qsize()):
-            payload = self.queue.get(False)
+        try:
+            while not self.queue.empty():
+                payload = self.queue.get_nowait()
+                print("Queue item being sent.")
+                self.sendMessage(payload.encode())
+        except queue.Empty:
+            pass
+        finally:
+            self.reactor.callLater(5, self.send_queued_items)
 
-            print "Sending queue item"
-            self.sendMessage(payload)
-
-        self.reactor.callLater(5, self.send_queued_items)
+    def _handle_send_error(self, failure):
+        print(f"Error sending message: {failure.getErrorMessage()}")
+        self.queue.put(failure.value)

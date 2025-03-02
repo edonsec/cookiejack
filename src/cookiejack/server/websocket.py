@@ -1,5 +1,5 @@
 from twisted.internet import reactor
-from server.injector_factory import InjectorFactory
+from .injector_factory import InjectorFactory
 import os, pwd, grp
 
 
@@ -10,9 +10,10 @@ class WebSocket(object):
         self.bind = bind
 
     def run(self, queue):
-        self.drop_privileges()
+        #self.drop_privileges()
         factory = InjectorFactory(queue, reactor)
 
+        print(f"Listening on port {self.port}")
         reactor.listenTCP(self.port, factory, interface=self.bind)
         reactor.run()
 
@@ -28,4 +29,4 @@ class WebSocket(object):
 
         os.setgid(running_gid)
         os.setuid(running_uid)
-        os.umask(077)
+        os.umask(0o770)

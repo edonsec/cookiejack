@@ -1,6 +1,6 @@
 from autobahn.twisted import WebSocketServerFactory
 
-from server.injector_protocol import InjectorProtocol
+from .injector_protocol import InjectorProtocol
 
 
 class InjectorFactory(WebSocketServerFactory):
